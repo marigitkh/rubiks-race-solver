@@ -33,7 +33,7 @@ All code files are located in the `src` folder:
 - **`board.py`**: Defines the game board and utility functions for state generation and manipulation.
 - **`hill_climbing_and_bfs.py`**: Contains implementations of Hill Climbing and Breadth-First Search algorithms.
 - **`informed_search.py`**: Implements A* and Iterative Deepening A* algorithms with heuristics.
-- **`rubiks_race_solver.py`**: Main script to run and test the solvers.
+- **`rubiks_race_solver_test.py`**: Main script to run and test the solvers.
 
 ## Algorithms Overview
 
