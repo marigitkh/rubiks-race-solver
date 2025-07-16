@@ -22,7 +22,7 @@ Each algorithm is compared based on:
 
 ## How to Run
 
-### 1. Install requirements
+1. Install requirements
 
 Only one external library is needed:
 
@@ -30,7 +30,7 @@ Only one external library is needed:
 pip install pandas
 ```
 
-### 2. Run a single puzzle test
+2. Run a single puzzle test
 
 To generate a random puzzle and solve it using all algorithms:
 
@@ -38,7 +38,7 @@ To generate a random puzzle and solve it using all algorithms:
 python main.py
 ```
 
-### 3. Run the experiment
+3. Run the experiment
 
 To reproduce the experiments described in the paper:
 
