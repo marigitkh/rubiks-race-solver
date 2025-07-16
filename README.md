@@ -48,13 +48,14 @@ python experiment.py
 
 This will:
 
-Run the algorithms on puzzles scrambled with different difficulty levels.
+- Run the algorithms on puzzles scrambled with different difficulty levels.
 
-Record the number of nodes expanded.
+- Record the number of nodes expanded.
 
-Save the results to a CSV file called `experiment_results.csv`.
+- Save the results to a CSV file called `experiment_results.csv`.
 
 You can change how many puzzles to run and how difficult they are by modifying values in the script.
+
 
 ## About the Puzzle
 
@@ -63,42 +64,15 @@ Rubik’s Race is a sliding tile puzzle played on a 5×5 grid. One tile space is
 This project treats it like a variation of the **N-Puzzle** and applies search algorithms to find a solution path from the scrambled board back to the goal.
 
 
-## AI Techniques Used
-
-- **A\***: Uses a heuristic (e.g., Manhattan distance) to guide search.
-- **IDA\***: Like A*, but uses less memory.
-- **BFS**: Explores all possible moves layer by layer.
-- **Hill Climbing**: Greedy algorithm that can get stuck in local minima.
-
 
 ## Experiment Summary
 
 The `rubiks-race-solver-analysis.pdf` file included in this repository contains the full experimental results and analysis.
 
-### 🔍 Key Findings
+### Key Findings
 
 - **IDA\*** with both **Manhattan Distance** and **Number of Misplaced Tiles** heuristics is the most efficient algorithm, expanding the fewest nodes overall.
 - **BFS** works but is highly inefficient, expanding thousands of nodes.
 - **Hill Climbing** is fast when it succeeds, but often fails due to local minima.
 - **A\*** finds optimal paths but uses more memory and expands more nodes compared to IDA\*.
 - The **distance from the goal** (i.e. number of scrambling steps) affects puzzle difficulty more than the board size itself.
-
-
-## Authors
-
-Marina Igitkhanian  
-Nina Lazaryan  
-Yeva Manukyan  
-Mariam Yayloyan  
-
-*CS246: Artificial Intelligence*  
-*American University of Armenia*  
-*2023*
-
-
-## Notes
-
-- A*, IDA*, and BFS will always find a solution if one exists.
-- Hill Climbing is fast but may fail if stuck in a local optimum.
-- You can change board size, number of moves, and number of runs in the experiment script.
-- Results are saved to a CSV file so they can be analyzed or visualized later.
