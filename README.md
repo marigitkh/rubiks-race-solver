@@ -4,7 +4,6 @@ This project was created for the CS246 Artificial Intelligence course at the Ame
 
 The goal is to solve the puzzle from the board game Rubik’s Race using classical AI search algorithms and compare their performance on scrambled puzzles of different difficulty levels.
 
----
 
 ## What This Project Does
 
@@ -20,8 +19,6 @@ The goal is to solve the puzzle from the board game Rubik’s Race using classic
 Each algorithm is compared based on:
 - Whether it finds a solution.
 - How many nodes it expands to reach the goal.
-
----
 
 ## How to Run
 
@@ -65,7 +62,6 @@ Rubik’s Race is a sliding tile puzzle played on a 5×5 grid. One tile space is
 
 This project treats it like a variation of the **N-Puzzle** and applies search algorithms to find a solution path from the scrambled board back to the goal.
 
----
 
 ## AI Techniques Used
 
@@ -74,7 +70,6 @@ This project treats it like a variation of the **N-Puzzle** and applies search a
 - **BFS**: Explores all possible moves layer by layer.
 - **Hill Climbing**: Greedy algorithm that can get stuck in local minima.
 
----
 
 ## Experiment Summary
 
@@ -88,16 +83,18 @@ The `rubiks-race-solver-analysis.pdf` file included in this repository contains 
 - **A\*** finds optimal paths but uses more memory and expands more nodes compared to IDA\*.
 - The **distance from the goal** (i.e. number of scrambling steps) affects puzzle difficulty more than the board size itself.
 
----
 
 ## Authors
 
-Marina Igitkhanian, Nina Lazaryan, Yeva Manukyan, Mariam Yayloyan
-CS246: Artificial Intelligence  
-American University of Armenia  
-Date: 2023  
+Marina Igitkhanian  
+Nina Lazaryan  
+Yeva Manukyan  
+Mariam Yayloyan  
 
----
+*CS246: Artificial Intelligence*  
+*American University of Armenia*  
+*2023*
+
 
 ## Notes
 
