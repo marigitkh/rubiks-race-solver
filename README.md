@@ -1,62 +1,107 @@
-# Rubik's Race Game Solver
+# 🧩 Rubik's Race Solver
 
-This project is an AI-powered solver for the Rubik's Race game. It explores various artificial intelligence algorithms to efficiently solve the game, a modified version of the classic N-Puzzle problem. The goal is to achieve a target pattern on a grid, given a randomized starting state.
+This project was created for the CS246 Artificial Intelligence course at the American University of Armenia.
 
-## Features
-
-- Implements **informed** and **uninformed** search strategies.
-- Algorithms included:
-  - A* (with Manhattan Distance and Number of Misplaced Tiles heuristics)
-  - Iterative Deepening A*
-  - Hill Climbing
-  - Breadth-First Search (for comparison)
-- Comparative analysis of algorithm performance.
-
-## Requirements
-
-- Python 3.x
-
-## How to Use
-
-1. Clone the repository and navigate to the project directory.
-2. Navigate to the `src` folder where the code files are located.
-3. Run the main script `rubiks_race_solver.py`:
-   ```bash
-   python src/rubiks_race_solver.py
-   ```
-4. Customize grid size and initial states in the code for testing different scenarios.
-
-## File Descriptions
-
-All code files are located in the `src` folder:
-
-- **`board.py`**: Defines the game board and utility functions for state generation and manipulation.
-- **`hill_climbing_and_bfs.py`**: Contains implementations of Hill Climbing and Breadth-First Search algorithms.
-- **`informed_search.py`**: Implements A* and Iterative Deepening A* algorithms with heuristics.
-- **`rubiks_race_solver_test.py`**: Main script to run and test the solvers.
-
-## Algorithms Overview
-
-- **A***: Uses heuristics to find the optimal solution efficiently.
-- **IDA***: A memory-efficient variation of A*.
-- **Hill Climbing**: Explores the solution space but may get stuck in local minima.
-- **Breadth-First Search**: Guarantees finding a solution but is computationally expensive.
-
-## Results
-
-- **IDA*** with Manhattan Distance heuristic performed best in terms of efficiency and accuracy.
-- Hill Climbing was fast but often failed to find a solution due to local minima.
-
-## Future Work
-
-- Investigate genetic algorithms and linear conflict heuristics for improved performance.
-- Test scalability with larger grid sizes and more complex patterns.
-
-## References
-
-This project is based on research and techniques used for solving N-Puzzle problems, adapted for Rubik's Race. Detailed insights can be found in the accompanying analysis PDF.
+The goal is to solve the puzzle from the board game Rubik’s Race using classical AI search algorithms and compare their performance on scrambled puzzles of different difficulty levels.
 
 ---
 
-For more details, refer to the project report included in `rubiks-race-solver-analysis.pdf`.
+## What This Project Does
 
+- Represents the Rubik’s Race board as a 5x5 grid.
+- Defines a goal region (the center 3×3 part of the board).
+- Randomly scrambles the board by a certain number of valid moves.
+- Tries to solve the puzzle using four search algorithms:
+  - **A*** (A-Star Search)
+  - **IDA*** (Iterative Deepening A-Star)
+  - **Breadth-First Search (BFS)**
+  - **Hill Climbing** (a local search method)
+
+Each algorithm is compared based on:
+- Whether it finds a solution.
+- How many nodes it expands to reach the goal.
+
+---
+
+## How to Run
+
+### 1. Install requirements
+
+Only one external library is needed:
+
+```bash
+pip install pandas
+```
+
+### 2. Run a single puzzle test
+
+To generate a random puzzle and solve it using all algorithms:
+
+```bash
+python main.py
+```
+
+### 3. Run the experiment
+
+To reproduce the experiments described in the paper:
+
+```bash
+python experiment.py
+```
+
+This will:
+
+Run the algorithms on puzzles scrambled with different difficulty levels.
+
+Record the number of nodes expanded.
+
+Save the results to a CSV file called `experiment_results.csv`.
+
+You can change how many puzzles to run and how difficult they are by modifying values in the script.
+
+## About the Puzzle
+
+Rubik’s Race is a sliding tile puzzle played on a 5×5 grid. One tile space is blank (`_`) and tiles can slide into it. The goal is to move tiles so that the center 3×3 window matches a target goal pattern.
+
+This project treats it like a variation of the **N-Puzzle** and applies search algorithms to find a solution path from the scrambled board back to the goal.
+
+---
+
+## AI Techniques Used
+
+- **A\***: Uses a heuristic (e.g., Manhattan distance) to guide search.
+- **IDA\***: Like A*, but uses less memory.
+- **BFS**: Explores all possible moves layer by layer.
+- **Hill Climbing**: Greedy algorithm that can get stuck in local minima.
+
+---
+
+## Experiment Summary
+
+The `rubiks-race-solver-analysis.pdf` file included in this repository contains the full experimental results and analysis.
+
+### 🔍 Key Findings
+
+- **IDA\*** with both **Manhattan Distance** and **Number of Misplaced Tiles** heuristics is the most efficient algorithm, expanding the fewest nodes overall.
+- **BFS** works but is highly inefficient, expanding thousands of nodes.
+- **Hill Climbing** is fast when it succeeds, but often fails due to local minima.
+- **A\*** finds optimal paths but uses more memory and expands more nodes compared to IDA\*.
+- The **distance from the goal** (i.e. number of scrambling steps) affects puzzle difficulty more than the board size itself.
+
+---
+
+## Authors
+
+Marina Igitkhanian, Nina Lazaryan, Yeva Manukyan, Mariam Yayloyan
+CS246: Artificial Intelligence  
+American University of Armenia  
+Date: 2023  
+
+---
+
+## Notes
+
+- A*, IDA*, and BFS will always find a solution if one exists.
+- Hill Climbing is fast but may fail if stuck in a local optimum.
+- You can change board size, number of moves, and number of runs in the experiment script.
+- Results are saved to a CSV file so they can be analyzed or visualized later.
