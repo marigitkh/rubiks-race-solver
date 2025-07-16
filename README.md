@@ -69,7 +69,7 @@ This project treats it like a variation of the **N-Puzzle** and applies search a
 
 The `rubiks-race-solver-analysis.pdf` file included in this repository contains the full experimental results and analysis.
 
-### Key Findings
+## Key Findings
 
 - **IDA\*** with both **Manhattan Distance** and **Number of Misplaced Tiles** heuristics is the most efficient algorithm, expanding the fewest nodes overall.
 - **BFS** works but is highly inefficient, expanding thousands of nodes.
